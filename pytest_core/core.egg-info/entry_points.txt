@@ -1,2 +1,0 @@
-[pytest11]
-core = core.custom_pytest_setup

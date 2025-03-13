@@ -1,2 +1,0 @@
-[pytest11]
-pytest_core = pytest_core.pre_setup_custom_plugin
