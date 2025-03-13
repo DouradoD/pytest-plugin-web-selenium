@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: pytest_core
+Version: 0.1.0
+Summary: Custom Core for Pytest.
+Home-page: https://github.com/yourusername/pytest_core
+Author: Diogo Dourado
+Author-email: diogo.augusto.dourado@gmail.com
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: selenium==4.29.0
+Requires-Dist: webdriver-manager==4.0.2
+Requires-Dist: pytest==8.3.4
+Requires-Dist: pytest-bdd==8.1.0
+Requires-Dist: pytest-html==4.1.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

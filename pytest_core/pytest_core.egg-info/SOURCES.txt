@@ -1,0 +1,12 @@
+README.md
+setup.py
+pytest_core/__init__.py
+pytest_core/custom_driver.py
+pytest_core/pre_setup_custom_plugin.py
+pytest_core/session_info.py
+pytest_core.egg-info/PKG-INFO
+pytest_core.egg-info/SOURCES.txt
+pytest_core.egg-info/dependency_links.txt
+pytest_core.egg-info/entry_points.txt
+pytest_core.egg-info/requires.txt
+pytest_core.egg-info/top_level.txt
