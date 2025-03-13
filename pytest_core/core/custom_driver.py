@@ -47,4 +47,4 @@ class CustomerDriver:
             elif self.browser.lower() == "opera":
                 return Safari(service=Service(self.webdriver_manager_enabled))
             else:
-                return Chrome(service=Service(ChromeDriverManager().install()))
+                return Chrome(service=Service(self.webdriver_manager_enabled))

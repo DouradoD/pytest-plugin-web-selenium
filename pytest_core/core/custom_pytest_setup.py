@@ -1,6 +1,6 @@
 import pytest
-from pytest_core.session_info import SessionInfo
-from pytest_core.custom_driver import CustomerDriver
+from core.session_info import SessionInfo
+from core.custom_driver import CustomerDriver
 import logging
 
 # Configure logging
