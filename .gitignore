@@ -6,3 +6,4 @@ pytest_core/pytest_core.egg-info
 pytest_core/core.egg-info
 .venv
 .venv/*
+./pytest_with_core_plugin/pytest_zero/*.html
