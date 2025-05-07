@@ -9,10 +9,8 @@ TXT_SEARCH_QUERY = (By.ID, 'search-query-label')
 
 
 def test_web_search(driver):
-    logging.basicConfig(level=logging.INFO)  # Configure logging level
-    logger = logging.getLogger(__name__)
-    logger.info("This is an info message.")
-    logger.debug("This is a debug message.")  # This will not be shown by default with info level.
+    driver.logger.info("This is an info message. DOURADO")
+    driver.logger.debug("This is a debug message.")  # This will not be shown by default with info level.
     assert True
 
 

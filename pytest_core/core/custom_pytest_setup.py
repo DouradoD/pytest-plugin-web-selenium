@@ -3,13 +3,7 @@ from core.session_info import SessionInfo
 from core.custom_driver import CustomerDriver
 import logging
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,  # Set the logging level
-    format="%(asctime)s - %(name)s - %(levelname)s - Conftest - %(message)s",  # Log format
-)
-
-logger = logging.getLogger(__name__)
+from .custom_logger import logger
 
 def pytest_addoption(parser):
 
@@ -31,18 +25,17 @@ def driver(request):
     logger.info("Starting the driver: Building the Driver...")
     logger.info("Creating the driver...")
     session_info = SessionInfo(request_config=request.config)
-    custom_driver = CustomerDriver(session_info=session_info)
-    logger.info(custom_driver.browser)
-    logger.info(', '.join("%s: %s" % item for item in vars(custom_driver).items()))
+    driver = CustomerDriver(session_info=session_info)
+    logger.info(driver._session_info.browser)
+    logger.info(', '.join("%s: %s" % item for item in vars(driver).items()))
 
 
 
 
-    driver = custom_driver.driver(timeout=15)
+    driver = driver.driver(timeout=15)
     driver.maximize_window()
 
 
-    logger.info("The pytest_with_core_plugin are going to run...")
     yield driver
 
     logger.info("Finishing the Driver/Tests...")
