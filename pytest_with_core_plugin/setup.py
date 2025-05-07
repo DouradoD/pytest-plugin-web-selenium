@@ -15,6 +15,5 @@ setup(
     install_requires=[
         "core>=0.1.0",
     ],
-    packages=find_packages(where="pytest_with_core_plugin"),
-    package_dir={"": "pytest_with_core_plugin"},
+    packages=find_packages(),
 )

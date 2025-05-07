@@ -56,7 +56,7 @@ Windows
 ````
 2. Install additional dependencies, if required:
 ````bash
-    cd ../pytest_zero
+    cd ../pytest_with_core_plugin
     pip install .
 ````
 
@@ -64,11 +64,6 @@ Windows
 ### Run Tests via Command Line
 
 1. Navigate to the pytest_zero directory:
-````bash
-    cd ../pytest_zero
-    pip install .
-````
-2. Navigate to the pytest_zero directory:
 ````bash
     pytest -s -v --log-level=info --tb=auto --html=report.html --self-contained-html
 ````
@@ -92,7 +87,7 @@ Note: Run the command below to check for more details:
 ### Run Tests via runner.py
 1. Navigate to the pytest_zero directory:
 ````bash
-    cd pytest_zero
+    cd ../pytest_zero
 ````
 2Navigate to the pytest_zero directory:
 ````bash

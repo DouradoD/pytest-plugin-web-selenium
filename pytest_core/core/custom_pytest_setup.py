@@ -17,12 +17,12 @@ def pytest_addoption(parser):
 
     parser.addoption("--browser", action="store", default="Chrome",
                      help="Specify the browser name: Chrome, Edge, Firefox or Opera, by default is Chrome")
-    parser.addoption("--webdriver_manager_enabled", action="store", default=False,
-                     help="Specify True to use the webdriver_manager, by default is False")
     parser.addoption("--driver_path", action="store", default=path,
                      help="Specify the driver path, C:./../chromedriver.exe, by default is None")
-    parser.addoption("--headless", action="store", default=False,
-                     help="Specify the headless value, by default is False")
+    parser.addoption("--browser_options", action="store", default=False,
+                     help="Specify the browse option as a list, "
+                          "ex: --browser_options=[--headless, --window-size=1600,1024, --log-level=0, ... ],"
+                          "by default is None")
 
 
 
@@ -33,7 +33,6 @@ def driver(request):
     session_info = SessionInfo(request_config=request.config)
     custom_driver = CustomerDriver(session_info=session_info)
     logger.info(custom_driver.browser)
-    logger.info(custom_driver.webdriver_manager_enabled)
     logger.info(', '.join("%s: %s" % item for item in vars(custom_driver).items()))
 
 

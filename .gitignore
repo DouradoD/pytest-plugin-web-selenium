@@ -1,9 +1,21 @@
-*/.pytest_cache/
-__pycache__
+# Ignore pytest cache and Python bytecode
+**/.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore IDE and editor-specific files
 .idea/
-pytest_core/build
-pytest_core/pytest_core.egg-info
-pytest_core/core.egg-info
-.venv
+.vscode/
+
+# Ignore virtual environment
+.venv/
 .venv/*
-./pytest_with_core_plugin/pytest_zero/*.html
+
+# Ignore build artifacts for pytest_core
+pytest_core/build/
+pytest_core/core.egg-info/
+pytest_with_core_plugin/pytest_with_core_plugin.egg-info/
+pytest_with_core_plugin/pytest_zero/report.html
+pytest_with_core_plugin/report.html
+report.html
