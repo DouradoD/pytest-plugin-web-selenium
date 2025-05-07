@@ -89,7 +89,7 @@ Note: Run the command below to check for more details:
 ````bash
     cd ../pytest_zero
 ````
-2Navigate to the pytest_zero directory:
+2. Navigate to the pytest_zero directory:
 ````bash
     python runner.py
 ````
