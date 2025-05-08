@@ -11,5 +11,5 @@
         "platformName": "Windows 11",
         "acceptInsecureCerts": true,
         "pageLoadStrategy": "normal",
-        "chromeOptions:maximized": "--start-maximized"}
+        "browserOptions": ["--start-maximized"]}
 }

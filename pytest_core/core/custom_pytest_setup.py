@@ -37,14 +37,4 @@ def driver(request):
 
     logger.info("Finishing the Driver/Tests...")
     driver.quit()
-
-
-def pytest_report_teststatus(report):
-    # Only modify the status for the "call" phase (test execution)
-    if report.when == "call":
-        if report.passed:
-            return "✅ ", "PASS", "PASSED"
-        elif report.failed:
-            return "❌ ", "FAIL", "FAILED"
-    # Return None for other phases to avoid modifying their status
-    return None
+    
