@@ -7,16 +7,14 @@ from .custom_logger import logger
 
 def pytest_addoption(parser):
 
-    path = "C:\Program Files\AutomationTestingDrivers\chromedriver-win64\chromedriver-win64\chromedriver.exe"
-
-    parser.addoption("--browser", action="store", default="Chrome",
-                     help="Specify the browser name: Chrome, Edge, Firefox or Opera, by default is Chrome")
-    parser.addoption("--driver_path", action="store", default=path,
-                     help="Specify the driver path, C:./../chromedriver.exe, by default is None")
-    parser.addoption("--browser_options", action="store", default=False,
-                     help="Specify the browse option as a list, "
-                          "ex: --browser_options=[--headless, --window-size=1600,1024, --log-level=0, ... ],"
-                          "by default is None")
+    parser.addoption("--session", action="store", default=None,
+                     help="The session info to use during the test, it is a required field if you are not using the --capabilities_path")
+    parser.addoption("--capabilities", action="store", default=False,
+                     help="The session info to use during the test, it is a required field if you are not using the --capabilities_path")
+    parser.addoption("--capabilities_path", action="store", default=None,
+                     help="Specify the capabilities path, C:./../capabilities.json, by default is None")
+    parser.addoption("--browserOptions", action="store", default=None,
+                     help="The Selenium browseOption.")
 
 
 
@@ -24,10 +22,9 @@ def pytest_addoption(parser):
 def driver(request):
     logger.info("Starting the driver: Building the Driver...")
     logger.info("Creating the driver...")
-    session_info = SessionInfo(request_config=request.config)
+    session_info = SessionInfo(request_config=request.config).get_session_info
     driver = CustomerDriver(session_info=session_info)
-    logger.info(driver._session_info.browser)
-    logger.info(', '.join("%s: %s" % item for item in vars(driver).items()))
+    logger.info(driver._session_info)
 
 
 

@@ -1,0 +1,15 @@
+{
+    "session": {
+        "host": "local",
+        "port": 4444,
+        "url": "http://localhost:4444/wd/hub",
+        "timeout": 30
+    },
+    "capabilities": {
+        "browserName": "chrome",
+        "browserVersion": "latest",
+        "platformName": "Windows 11",
+        "acceptInsecureCerts": true,
+        "pageLoadStrategy": "normal",
+        "chromeOptions:maximized": "--start-maximized"}
+}

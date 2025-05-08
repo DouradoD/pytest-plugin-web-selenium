@@ -20,7 +20,7 @@ class CustomerDriver:
         self._driver.logger = logger
 
     def build_driver(self):
-        browser = self._session_info.browser.lower()
+        browser = self._session_info['capabilities']['browserName']
         if browser == "firefox":
             return Firefox(options=self.get_browser_options(browser))
         elif browser == "edge":
@@ -39,5 +39,6 @@ class CustomerDriver:
             obj_option = SafariOptions()
         else:
             obj_option = ChromeOptions()
-        # WIP - Add more options for each browser
+        for arg in self._session_info['capabilities']['browserOptions']:
+            obj_option.add_argument(arg)
         return obj_option
