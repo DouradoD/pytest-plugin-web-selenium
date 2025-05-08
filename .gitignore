@@ -12,10 +12,14 @@ __pycache__/
 .venv/
 .venv/*
 
-# Ignore build artifacts for pytest_core
+# Ignore build artifacts
 pytest_core/build/
 pytest_core/core.egg-info/
 pytest_with_core_plugin/pytest_with_core_plugin.egg-info/
 pytest_with_core_plugin/pytest_zero/report.html
 pytest_with_core_plugin/report.html
 report.html
+
+#pact files
+pacts/
+logs/
